@@ -60,7 +60,7 @@ Jawaban:
 Definisi:
 - MVC (Model-View-Controller) adalah sebuah desain pola arsitektur yang memisahkan sebuah aplikasi menjadi komponen model, view, dan controller.
 - MVT (Model-View-Template) adalah sebuah desain pola arsitektur untuk membuat sebuah aplikasi web denagn memisahkan aplikasi menjadi mode, view, dan template.
-- MVVM (Model-View-ViewModel) adalah sebuah desain pola arsitektur yang mengatasi kekurangan MVP (Model-View-Presenter) dan MVC dengan memisahkan antara logika yang akan ditampilkan atau UI (User Interface) dengan inti dari logika bisnis aplikasi.
+- MVVM (Model-View-ViewModel) adalah sebuah desain pola arsitektur yang mengatasi kekurangan MVP (Model-View-Presenter) dan MVC dengan memisahkan antara logika yang akan ditampilkan atau UI (User Interface) dengan logika bisnis aplikasi.
 
 Perbedaan:
 
@@ -70,9 +70,9 @@ MVC:
 - _View_ dan model sangat berkaitan.
 - Pada MVC, kita harus menulis seluruh _control_ dengan kode yang spesifik.
 - Sulit untuk dimodifikasi.
-- Cocok untuk mengembangkan sebuah proyek skala besar.
+- Sesuai untuk mengembangkan sebuah proyek skala besar.
 - Tidak melibatkan pemetaan URL.
-- Unit testing terbatas.
+- _Unit testing_ terbatas.
 - Penerapan pada ASP.NET MVC dan Spring MVC.
 
 MVT:
@@ -81,15 +81,15 @@ MVT:
 - _View_ dan model tidak terlalu berkaitan.
 - _Controller_ diatur oleh _framework_.
 - Modifikasi mudah.
-- Cocok untuk proyek skala kecil dan beasr.
+- Sesuai untuk proyek skala kecil dan beasr.
 - Melibatkan pemetaan URL.
 - Mudah menggunakan _unit testing_.
 - Penerapan pada Django.
 
 MVVM:
-- Lebih _event-driven_ karena memisahkan _business logic_ dan _View_.
+- Memisahkan _business logic_ dan _View_ sehingga lebih _event-driven_.
 - Banyak _View_ dapat dipetakan dengan sebuah _ViewModel_ sehingga _View_ memiliki referensi ke _ViewModel_.
 - Mudah untuk dimodifikasi.
-- Tidak cocok untuk proyek skala kecil.
+- Tidak sesuai untuk proyek skala kecil.
 - _Unit testability_ pada arsitektur ini merupakan yang tertinggi.
 - Penerapan pada Xamarin.
