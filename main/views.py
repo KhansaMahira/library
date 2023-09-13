@@ -5,6 +5,7 @@ def show_main(request):
     context = {
         'author_name': 'Khansa Mahira',
         'author_class': 'PBP D',
+        'application_name': 'Library',
         'name': 'Untuk Negeriku',
         'amount': 1,
         'description': 'This book was written by Mohammad Hatta. It was published by PT Kompas Media Nusantara in 2011.',
