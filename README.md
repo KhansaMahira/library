@@ -16,14 +16,14 @@ Jawaban:
 1)  Saat membuat aplikasi Django, saya memulai dari membuat direktori bernama library yang saya inisialisasikan dengan github.
 2)  Berikutnya saya membuat repositori bernama library di github untuk menyimpan direktori aplikasi secara virtual.
 3)  Pada direktori library di komputer saya, saya membuat dan mengaktifkan _environment_ Django dengan memanfaatkan isi dari requirements.txt sehingga memudahkan saya tanpa perlu menyusun kode aplikasi dari awal.
-4)  Selanjutnya, saya membuat aplikasi main. Setelah dibuat direktori main, maka pada settings.py dalam direktori library saya menambahkan main pada list INSTALLED_APPS.
-5)  Pada direktori main, saya membuat direktori main, saya membuat direktori templates yang berisi file main.html yang akan ditampilkan pada saat menjalankan proyek.
+4)  Selanjutnya, saya membuat aplikasi main. Setelah dibuat direktori main, maka pada settings.py dalam direktori library, saya menambahkan main pada list INSTALLED_APPS.
+5)  Pada direktori main, saya membuat direktori templates yang berisi file main.html yang akan ditampilkan pada saat menjalankan proyek.
 6)  Tentunya, file tersebut memerlukan model sehingga saya menambahkan class Product pada models.py di direktori main.
 7)  Selain itu, dijalankan perintah membuat migrasi model dan menerapkan migrasi ke dalam basis data lokal.
 8)  Sedangkan, data yang akan ditampilkan pada _template_ dibuat dalam fungsi show_main pada file views.py yang terdapat pada direktori main.
 9)  Saya juga mengonfigurasi _routing_ URL aplikasi main dan _routing_ URL proyek.
-10) Sebelum menyimpan perubahan pada repository, saya juga membuat unit test pada file test.py di direktori main dan menjalankannya.
-11) Perubahan yang sudah saya lakukan sebelumnya saya simpan di repository library di github. Berikutnya saya meng-_upload_ proyek saya di adaptable.io.
+10) Sebelum menyimpan perubahan pada repositori, saya juga membuat unit test pada file test.py di direktori main dan menjalankannya.
+11) Perubahan yang sudah saya lakukan sebelumnya saya simpan di repositori library di github. Berikutnya saya meng-_upload_ proyek saya di adaptable.io.
 12) Setelahnya, saya juga membuat perubahan-perubahan untuk menyelesaikan bagian-bagian tugas yang belum terselesaikan. Tentunya, saya selalu melakukan _add_, _commit_, dan _push_ sehingga repositori library selalu menampilkan yang terbaru.
 
 
@@ -59,7 +59,7 @@ Jawaban:
 
 Definisi:
 - MVC (Model-View-Controller) adalah sebuah desain pola arsitektur yang memisahkan sebuah aplikasi menjadi komponen model, view, dan controller.
-- MVT (Model-View-Template) adalah sebuah desain pola arsitektur untuk membuat sebuah aplikasi web denagn memisahkan aplikasi menjadi mode, view, dan template.
+- MVT (Model-View-Template) adalah sebuah desain pola arsitektur untuk membuat sebuah aplikasi web dengan memisahkan aplikasi menjadi mode, view, dan template.
 - MVVM (Model-View-ViewModel) adalah sebuah desain pola arsitektur yang mengatasi kekurangan MVP (Model-View-Presenter) dan MVC dengan memisahkan antara logika yang akan ditampilkan atau UI (User Interface) dengan logika bisnis aplikasi.
 
 Perbedaan:
