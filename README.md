@@ -7,6 +7,8 @@ PBP D
 
 **Tugas 2**
 
+Web: https://library-deploy.adaptable.app
+
 
 **Jelaskan bagaimana cara kamu mengimplementasikan _checklist_ di atas secara _step-by-step_ (bukan hanya sekadar mengikuti tutorial).**
 
@@ -31,6 +33,7 @@ Jawaban:
 
 Bagan:
 
+![KhansaMahira_Tugas2](https://github.com/KhansaMahira/library/assets/110018127/aba947c3-869a-490f-b423-580e87b486a4)
 
 Penjelasan bagan yaitu sebagai berikut.
 1) Saat suatu komputer mengakses sebuah aplikasi atau situs web, akan dikirimkan _request_ ke internet.
