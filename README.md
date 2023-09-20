@@ -146,22 +146,42 @@ JSON memiliki beberapa keunggulan yaitu sebagai berikut.
 **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
 
 Jawaban:
-
-[ini jawaban]
+1. Saya mengatur routing pada library/urls.py dengan mengubah path('main/', include('main.urls')) menjadi path('', include('main.urls')).
+2. Saya membuat /templates/base.html sebagai template halaman web.
+3. Saya menambahkan 'DIRS': [BASE_DIR / 'templates'] pada TEMPLATES di library/settings.py.
+4. Saya menyesuaikan kode pada main/templates/main.html.
+5. Saya membuat struktur form pada main/forms.py sehingga dapat menerima produk yang akan saya tambahkan pada web.
+6. Pada main/views.py saya juga menyesuaikan dengan menambahkan beberapa import yang dapat membantu dalam membuat fungsi create_product, show_xml, show_json, show_xml_by_id, dan show_json_by_id serta menyesuaikan fungsi show_main. Fungsi show_xml untuk mengembalikan data dalam bentuk XML. Fungsi show_json untuk mengembalikan data dalam bentuk JSON. Fungsi show_xml_by_id untuk mengembalikan data dalam bentuk XML berdasarkan id product. Fungsi show_json_by_id untuk mengembalikan data dalam bentuk JSON berdasarkan id product.
+7. Oleh karena itu, saya perlu menyesuaikan import pada main/urls.py.
+8. Berikutnya, saya membuat file create_product.html di main/templates untuk form POST.
+9. Saya juga menyesuaikan main/templates/main.html untuk menampilkan data dalam bentuk web.
+10. Saat mengerjakan tugas ini, saya menerima beberapa eror sehingga saya kembali melakukan migrasi dengan memperbaiki variabel yang telah saya buat di tugas sebelumnya.
+12. Saya menggunakan Postman untuk membuat request GET dengan url http://localhost:8000/ untuk menampilkan bentuk HTML dari web saya. Dengan url http://localhost:8000/xml untuk menampilkan bentuk XML data web saya. Dengan url http://localhost:8000/json untuk menampilkan bentuk JSON data web saya. Dengan url http://localhost:8000/xml/[id] untuk menampilkan bentuk xml data berdasarkan ID yang saya masukkan pada web saya. Dengan url http://localhost:8000/json/[id] untuk menampilkan bentuk json data berdasarkan ID yang saya masukkan pada web saya.
+13. Untuk menyelesaikan soal bonus saya mencoba menampilkan jumlah buku yang telah ditambahkan dengan menggunakan for loop dari main.html menggunakan Liquid template language. Walaupun begitu, saya menemui banyak eror sehingga saya melakukan for loop dalam fungsi _sum_ yang disimpan pada total_amount pada main/views.py yang ditampilkan pada main.html
 
 
  **_Screenshot_ dari hasil akses URL pada Postman**
 
 HTML:
+![html1](https://github.com/KhansaMahira/library/assets/110018127/25655e16-78da-4cb2-827f-28cfacdbea50)
+![html2](https://github.com/KhansaMahira/library/assets/110018127/bf9fb480-b59d-4535-a3b4-bd74856505bb)
+![html3](https://github.com/KhansaMahira/library/assets/110018127/c60c6e59-8fd7-4f8e-9db8-d9dc2a062a0d)
+![html4](https://github.com/KhansaMahira/library/assets/110018127/83e9486e-af73-4d09-bf14-2d272d091085)
 
 
 XML:
+![xml](https://github.com/KhansaMahira/library/assets/110018127/0405c8b0-4924-4073-93f4-22d710b3aca7)
 
 
 JSON:
+![json](https://github.com/KhansaMahira/library/assets/110018127/2fc89dc0-2237-448c-ba66-bada5cbbc697)
 
 
 XML _by ID_:
+![xmlbyid1](https://github.com/KhansaMahira/library/assets/110018127/9affc08e-54ae-4a44-811c-db09a5348356)
+![xmlbyid2](https://github.com/KhansaMahira/library/assets/110018127/413752f0-479b-4e10-b771-59a0d921a1eb)
 
 
 JSON _by ID_:
+![jsonbyid1](https://github.com/KhansaMahira/library/assets/110018127/1c634edc-a183-4fe6-ac79-617c623d84dd)
+![jsonbyid2](https://github.com/KhansaMahira/library/assets/110018127/8c398f1c-490a-4d34-982b-a7fc6f339541)
