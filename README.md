@@ -93,3 +93,75 @@ MVVM:
 - Tidak sesuai untuk proyek skala kecil.
 - _Unit testability_ pada arsitektur ini merupakan yang tertinggi.
 - Penerapan pada Xamarin.
+
+
+**Tugas 3**
+
+
+**Apa perbedaan antara form POST dan form GET dalam Django?**
+
+Jawaban:
+
+Form POST:
+- Proses pada form Post dimulai dari data form digabungkan, berikutnya di-_encode_ untuk transmisi lalu dikirim ke server. Terakhir, respons akan diterima kembali.
+- Sesuai dengan prosesnya, POST digunakan untuk data yang berhubungan dengan keamanan seperti _password_.
+- POST digunakan untuk _request_ yang dapat merubah keadaan sistem.
+
+Form GET:
+- Proses pada form GET dimulai dari menggabungkan data yang dikirimkan ke dalam string untuk membuat URL sehingga URL berisi alamat tujuan pengiriman data, beserta _key_ dan _value_-nya.
+- GET digunakan pada _request_ yang tidak mempengaruhi keadaan sistem.
+- GET digunakan untuk sebuah halaman pencarian karena URL dari GET _request_ mudah untuk ditandai, dibagikan, atau dikirim ulang.
+
+
+**Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?**
+
+Jawaban:
+
+XML:
+
+XML digunakan untuk menyimpan atau mengirim data. Data XML bersifat _self-describing_ sehingga dapat diproses dan ditampilkan dengan cara yang tidak terbatas. XML menyimpan data menggunakan _tag_ yang dapat didefinisikan oleh pengguna sehingga dapat disesuaikan dengan kebutuhan.
+
+JSON:
+
+Format data yang digunakan JSON yaitu _human-readable text_ yang terdiri dari atribut berupa _key_ dan _value_. Setiap pasangan _key_ dan _value_ pada JSON selalu diawali dan diakhiri dengan kurung kurawal. Data tersebut digunakan untuk menyimpan dan mengirimkan objek data yang terstruktur.
+
+HTML:
+
+HTML digunakan untuk memformat dan menampilkan data. Data yang disimpan dalam HTML pada _element_ dapat menggunakan _attribute_ di dalam _tag_sehingga lebih fleksibel.
+
+
+**Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?**
+
+Jawaban:
+
+JSON memiliki beberapa keunggulan yaitu sebagai berikut.
+- Kesederhanaan karena strukturnya lebih simpel.
+- Keterbacaan karena JSON memiliki format _text-based_ dalam bentuk pasangan _key_ dan _value_.
+- Bersifat _lightwieght_ sehingga lebih efisien.
+- _Performance_ JSON lebih cepat dibandingkan XML.
+- JSON mendukung tipe data seperti null, string, boolean, numeric, object, dan array.
+- Bersifat kompatibilitas dan interoperabilitas sehingga dapat digunakan pada berbagai macam _framework_, bahasa pemrograman, dan platform.
+
+
+**Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
+
+Jawaban:
+
+[ini jawaban]
+
+
+ **_Screenshot_ dari hasil akses URL pada Postman**
+
+HTML:
+
+
+XML:
+
+
+JSON:
+
+
+XML _by ID_:
+
+
+JSON _by ID_:
