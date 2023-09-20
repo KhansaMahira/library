@@ -1,17 +1,41 @@
-<h3>Nama: </h3>
-<p>{{ author_name }}</p>
-<h3>Kelas: </h3>
-<p>{{ author_class }}</p>
-<h3>Nama Aplikasi: </h3>
-<p>{{ application_name }}</p>
+{% extends 'base.html' %}
 
-<h5>Title: </h5>
-<p>{{ name }}</p>
-<h5>Amount: </h5>
-<p>{{ amount }}</p>
-<h5>Description: </h5>
-<p>{{ description }}</p>
-<h5>Category: </h5>
-<p>{{ book_category }}</p>
-<h5>ISBN: </h5>
-<p>{{ isbn }}</p>
+{% block content %}
+    <h1>Library Page</h1>
+
+    <h3>Nama: </h3>
+    <p>{{ author_name }}</p>
+    <h3>Kelas: </h3>
+    <p>{{ author_class }}</p>
+
+    <p>Kamu menyimpan {{total_amount}} item pada aplikasi ini</p>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Date Added</th>
+        </tr>
+    
+        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+    
+        {% for product in products %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.amount}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.date_added}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+    <br />
+    
+    <a href="{% url 'main:create_product' %}">
+        <button>
+            Add New Product
+        </button>
+    </a>
+
+{% endblock content %}
