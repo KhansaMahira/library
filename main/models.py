@@ -1,13 +1,7 @@
 from django.db import models
 
-# Create your models here.
 class Product(models.Model):
-    author_name = models.CharField(max_length=255)
-    author_class = models.CharField(max_length=255)
-    application_name = models.TextField()
     name = models.CharField(max_length=255)
     date_added = models.DateField(auto_now_add=True)
     amount = models.IntegerField()
     description = models.TextField()
-    book_category = models.TextField()
-    isbn = models.CharField(max_length=255)
