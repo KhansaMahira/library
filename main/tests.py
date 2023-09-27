@@ -11,7 +11,7 @@ class mainTest(TestCase):
         self.assertTemplateUsed(response, 'main.html')
     
     def test_valid_form(self):
-        data = {'author_name': 'Khansa Mahira',
+        data = {
                 'author_class': 'PBP D',
                 }
         response = self.client.post('/main/', data)
