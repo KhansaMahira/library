@@ -81,7 +81,7 @@ MVT:
 - _View_ dan model tidak terlalu berkaitan.
 - _Controller_ diatur oleh _framework_.
 - Modifikasi mudah.
-- Sesuai untuk proyek skala kecil dan beasr.
+- Sesuai untuk proyek skala kecil dan besar.
 - Melibatkan pemetaan URL.
 - Mudah menggunakan _unit testing_.
 - Penerapan pada Django.
@@ -185,3 +185,63 @@ XML _by ID_:
 JSON _by ID_:
 ![jsonbyid1](https://github.com/KhansaMahira/library/assets/110018127/1c634edc-a183-4fe6-ac79-617c623d84dd)
 ![jsonbyid2](https://github.com/KhansaMahira/library/assets/110018127/8c398f1c-490a-4d34-982b-a7fc6f339541)
+
+
+**Tugas 4**
+
+
+**Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
+
+Jawaban:
+
+Django UserCreationForm digunakan untuk membuat akun pengguna baru pada aplikasi web.
+
+Kelebihan:
+
+Django UserCreationForm memudahkan _developer_ dalam membuat register dan sign in form dengan memanfaatkan konsep model.
+
+Kekurangan:
+
+Django UserCreationForm tidak mendeteksi secara langsung mengenai _password_ yang dituliskan oleh pengguna apabila _password_ memenuhi persyaratan yang telah ditampilkan di halawamn web atau tidak sehingga pengguna dapat membuat _password_ sesuai keinginan tanpa memenuhi persyaratan yang disarankan.
+
+
+**Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?**
+
+Jawaban:
+
+Autentikasi:
+
+Autentikasi memverifikasi bahwa pengguna adalah diri mereka sendiri dari akun yang telah dibuat. Sistem autentikasi pengguna menangani akun pengguna, grup, izin, dan sesi pengguna berbasis _cookies_. Sistem autentikasi bawaan Django menyediakan kerangka kerja yaang kuat dan fleksibel untuk mengelola autentikasi pengguna. Sistem ini meliputi model pengguna untuk menyimpan informasi pengguna, serta tampilan dan formulis untuk menangani _registration_, _login_, dan manajemen _password_.
+
+Otorisasi:
+
+Otorisasi menentukan hal-hal boleh dilakukan dalam aplikasi oleh pengguna yang diautentikasi. Sistem otorisasi Django dibangun di atas sistem autentikasinya dan memungkinkan _developer_ untuk mengontrol akses ke berbagai bagian aplikasi dengan mudah. Django menyediakan set izin untuk model bawaannya seperti menambah, mengubah, menghapus, serta mengizinkan _developer_ untuk membuat izin khusus untuk model mereka sendiri.
+
+Keduanya penting karena autentikasi berkatian dengan otorisasi. Dengan autentikasi kita dapat memverifikasi pengguna. Sedangkan, izin yang boleh dilakukan oleh pengguna tersebut terdapat pada otorisasi.
+
+**Apa itu _cookies_ dalam konteks aplikasi web, dan bagaimana Django menggunakan _cookies_ untuk mengelola data sesi pengguna?**
+
+Jawaban:
+
+_Cookies_ adalah data yang disimpan di browser pengguna yang dapat berisi berbagai informasi yang menghasilkan pengetahuan tentang aktivitas internet pengguna. Tujuan utama _cookies_ adalah untuk mengidentifikasi pengguna dan menyajikan halaman web yang disesuaikan dengan pengguna sehingga perpindahan setiap halaman web lebih mudah, serta menyimpan informasi login pengguna.
+
+Django menyediakan dukungan penuh untuk sesi anonim. _Session framework_ menyimpan data di sisi server dan mengabstraksi pengiriman dan penerimaan _cookies_. _Cookies_ berisi ID sesi, bukan data itu sendiri.
+
+**Apakah penggunaan _cookies_ aman secara _default_ dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?**
+
+Jawaban:
+
+Umumnya _cookies_ aman dalam pengembangan web, tetapi beberapa bisa digunakan untuk melacak pengguna tanpa persetujuan pengguna oleh _cybercriminal_. Beberapa risiko potensial yang harus diwaspadai:
+- Masalah keamanan karena pencurian _cookie_, gangguan, pemutaran ulang, serangan cross-site scripting (XSS), atau serangan cross-site request forgery (CSRF).
+- _Cookies_ dapat digunakan untuk melacak jejak _online_ kegiatan pengguna dan membuat sebuah profil berdasarkan hal tersebut.
+- _Cookies_ dapat menimbulkan risiko terhadap privasi pengguna dengan mengizinkan pihak ketiga seperi pengiklan, pemerintah, atau pengguna lain, melacak seluruh _path_ di Internet.
+
+**Jelaskan bagaimana cara kamu mengimplementasikan _checklist_ di atas secara _step-by-step_ (bukan hanya sekadar mengikuti tutorial).**
+
+Jawaban:
+1. Pada main/views.py, saya membuat fungsi register yang akan digunakan untuk membuat akun baru pengguna web saya. Oleh karena itu, pada direktori main/templates, saya membuat register.html. Saya juga menambahkan path register pada urlpatterns setelah melakukan import register pada main/urls.py.
+2. Selain register, diperlukan form login sehingga pengguna dapat masuk menuju halaman library page utama. Oleh karena itu, saya membuat fungsi login_user pada main/views.py dan file login.html pada main/templates. Saya juga menambahkan path login_user pada urlpatterns setelah melakukan import login_user pada main/urls.py.
+3. Untuk melengkapi login, saya juga membuat fungsi logout dengan membuat fungsi logout_user pada main/views.py sehingga saya hanya perlu merevisi main/templates/main.html untuk menyiapkan tombol logout. Saya juga menambahkan path logout_user pada urlpatterns setelah melakukan import logout_user pada main/urls.py.
+4. Pada main/views.py saya mengimport login_required yang digunakan pada @login_required(login_url='/login') sebelum fungsi show_main sehingga halaman main hanya bisa diakses pengguna yang telah login.
+5. Saya memanfaatkan _cookies_ untuk menampilkan data last_login pada halaman main dengan cara import HttpResponseRedirect, reverse, dan datetime pada main/views.py. Oleh karena itu, saya merevisi blok if user not None pada fungsi login_user termasuk set cookie pada response. Saya juga merevisi fungsi logout_user termasuk menambahkan delete cookie pada response. Untuk menampilkan data last_login pada halaman web, maka saya menambahkan kode last_login pada main/templates/main.html.
+6. Karena web yang saya buat membutuhkan akun pengguna maka saya mengimport User pada main/models.py serta menambahkan user pada class Product. Oleh karena itu saya juga perlu merevisi fungsi create_product dan show_main pada main/views.py. Lalu saya melakukan migrasi.
