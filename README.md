@@ -246,3 +246,86 @@ Jawaban:
 5. Saya memanfaatkan _cookies_ untuk menampilkan data last_login pada halaman main dengan cara import HttpResponseRedirect, reverse, dan datetime pada main/views.py. Oleh karena itu, saya merevisi blok if user not None pada fungsi login_user termasuk set cookie pada response. Saya juga merevisi fungsi logout_user termasuk menambahkan delete cookie pada response. Untuk menampilkan data last_login pada halaman web, maka saya menambahkan kode last_login pada main/templates/main.html.
 6. Karena web yang saya buat membutuhkan akun pengguna maka saya mengimport User pada main/models.py serta menambahkan user pada class Product. Oleh karena itu saya juga perlu merevisi fungsi create_product dan show_main pada main/views.py. Lalu saya melakukan migrasi.
 7. Saya mencoba proyek dengan menjalankan proyek, membuat akun, login, menambahkan product, dan logout.
+
+
+**Tugas 5**
+
+
+**Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.**
+
+Jawaban:
+
+- Element (Type) Selector: element selector berdasarkan nama element pada file HTML, membantu menjaga kode tetap simple dengan menerapkan style kepada seluruh element dengan tipe tertentu, digunakan saat _developer_ ingin membuat tampilan pada element tertentu. Pada file css dituliskan dalam bentuk
+
+        selector {
+            properties: value;
+        }
+
+- ID Selector: diterapkan pada element HTML yang memiliki id attribute yang sesuai dengan selector yang mana developer tidak dapat memiliki lebih dari satu element yang memiliki id yang sama dalam file HTML. Pada file css ditandai dengan tanda (#), yaitu
+    
+        #id-name {
+            properties: value;
+        }
+
+- Class Selector: diterapkan pada element html yang memiliki class attribute yang sesuai dengan selector. Pada file css ditandai dengan tanda (.), yaitu
+    
+        .class-name {
+            properties: value;
+        }
+
+**Jelaskan HTML5 Tag yang kamu ketahui.**
+
+Jawaban:
+- <audio> : menentukan file audio.
+- <canvas> : untuk merender dynamic bitmap graphic dengan cepas.
+- <embed> : mendefinisikan konten atau plugin interaktif eksternal.
+- <footer> : menentukan sebuah footer dari sebuah bagian yang berisi informasi seperti author, copyright, dan lain-lain.
+- <header> : dapat digunakan untuk navigasi.
+- <nav> : menentukan bagian dari dokumen untuk navigasi.
+- <time> : menentukan tanggal dan waktu
+- <video> : menentukan file video.
+
+**Jelaskan perbedaan antara margin dan padding.**
+
+Jawaban:
+
+Margin:
+- Merupakan whitespace pada sekitar elemen yang diterapkan margin atau merupakan external element.
+- Bisa setting otomatis.
+- Bisa menggunakan angka negatif saat menentukan margin.
+- Tidak memberi dampak pada style elemen lain.
+
+Padding:
+- Merupakan jumlah inner space yang dimiliki oleh elemen.
+- Tidak bisa setting otomatis.
+- Tidak bisa menggunakan angka negatif saat menentukan margin.
+- Berdampak pada style elemen lain pada aplikasi.
+
+**Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?**
+
+Jawaban:
+
+Tailwind:
+- Digunakan untuk membuat user interface sesuai yang diperlukan.
+- Menyediakan kelas yang mengutamakan kegunaan yang unik.
+- Tampilannya unik dan fleksibel.
+- Membutuhkan ukuran file yang kecil.
+- Merupakan framework yang terbaru karena masih dapat berubah.
+- Sebaiknya digunakan saat membuat aplikasi yang memerlukan elemen-elemen yang perlu dibuat sendiri atau bersifat unik dengan memanfaatkan common utility classes yang mana developer memiliki kebebasan untuk membuat aplikasi sehingga lebih kreatif.
+
+Bootstrap:
+- Digunakan untuk membuat aplikasi yang responsif.
+- Menyedikana theme dan templates yang sudah jadi.
+- Umumnya identik karena memiliki in-built template.
+- Membutuhkan ukuran file yang besar.
+- Framework yang sudah lebih lama ada dan terkenal atas sifatnya yang responsif dan efisien.
+- Sebaiknya digunakan saat membuat aplikasi yang responsif secara efisien untuk menghemat waktu dengan solusi yang konsisten karena meliputi skenario penggunaan aplikasi.
+  
+**Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
+
+Jawaban:
+1. Saya mengawali proyek dengan menambahkan bootstrap ke aplikasi saya dengan menambahkan kode pada file base.html.
+2. Saya menambahkan _navigation bar_ dengan menambahkan pada templates/navbar.html yang di-_include_ pada main/templates/main.html sehingga navigation bar akan muncul di aplikasi main.
+3. Saya menambahkan tombol _edit_ pada aplikasi main dengan membuat fungsi edit_product pada main/views.py lalu diimpor dan path url fungsi ini ditambahkan urlpatterns pada main/urls.py. Tapi sebelumnya saya membuat form edit product pada main/templates/edit_product.html. Tombol ini digunakan untuk mengedit data pada tabel dalam main sehingga kode pada main/templates/main.html saya tambahkan tombol edit pada kolom setelah kolom Date Added.
+4. Saya juga menambahkan tombol _delete_ pada aplikasi main dengan membuat fungsi delete_product pada main/views.py lalu diimpor dan path url fungsi ini ditambahkan urlpatterns pada main/urls.py. Untuk menampilkannya pada aplikasi main, saya menambahkan button ini pada kolom yang sama dengan tombol _edit_ pada main/templates/main.html sehingga saya dapat menghapus product yang ada pada aplikasi.
+5. Untuk menerapkan CSS, saya menambahkan file pada main/static/main/externalstyle.css untuk _element_ p yang akan saya tampilkan pada main/templates/main.html sebagai penerapan external style sheet. Selain itu, untuk memenuhi nilai bonus saya juga menambahkan inline style sheet pada pada _branch_ {% if forloop.last %} dalam for loop products sehingga tampilan hanya diterapkan pada item terakhir dari products.
