@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+    {% include 'navbar.html' %}
+    <link rel="stylesheet"
+        href={% static '/main/externalstyle.css' %} />
+
     <h1>Library Page</h1>
 
     <h3>Nama: </h3>
@@ -21,12 +25,45 @@
         {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
     
         {% for product in products %}
-            <tr>
-                <td>{{product.name}}</td>
-                <td>{{product.amount}}</td>
-                <td>{{product.description}}</td>
-                <td>{{product.date_added}}</td>
-            </tr>
+            {% if forloop.last %}
+                <tr style="background-color:rgb(0, 255, 157);">
+                    <td>{{product.name}}</td>
+                    <td>{{product.amount}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.date_added}}</td>
+                    <td>
+                        <a href="{% url 'main:edit_product' product.pk %}">
+                            <button>
+                                Edit
+                            </button>
+                        </a>
+                        <a href="{% url 'main:delete_product' product.pk %}">
+                            <button>
+                                Delete
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.amount}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.date_added}}</td>
+                    <td>
+                        <a href="{% url 'main:edit_product' product.pk %}">
+                            <button>
+                                Edit
+                            </button>
+                        </a>
+                        <a href="{% url 'main:delete_product' product.pk %}">
+                            <button>
+                                Delete
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            {% endif %}
         {% endfor %}
     </table>
     
