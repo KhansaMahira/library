@@ -329,3 +329,48 @@ Jawaban:
 3. Saya menambahkan tombol _edit_ pada aplikasi main dengan membuat fungsi edit_product pada main/views.py lalu diimpor dan path url fungsi ini ditambahkan urlpatterns pada main/urls.py. Tapi sebelumnya saya membuat form edit product pada main/templates/edit_product.html. Tombol ini digunakan untuk mengedit data pada tabel dalam main sehingga kode pada main/templates/main.html saya tambahkan tombol edit pada kolom setelah kolom Date Added.
 4. Saya juga menambahkan tombol _delete_ pada aplikasi main dengan membuat fungsi delete_product pada main/views.py lalu diimpor dan path url fungsi ini ditambahkan urlpatterns pada main/urls.py. Untuk menampilkannya pada aplikasi main, saya menambahkan button ini pada kolom yang sama dengan tombol _edit_ pada main/templates/main.html sehingga saya dapat menghapus product yang ada pada aplikasi.
 5. Untuk menerapkan CSS, saya menambahkan file pada main/static/main/externalstyle.css untuk _element_ p yang akan saya tampilkan pada main/templates/main.html sebagai penerapan external style sheet. Selain itu, untuk memenuhi nilai bonus saya juga menambahkan inline style sheet pada pada _branch_ {% if forloop.last %} dalam for loop products sehingga tampilan hanya diterapkan pada item terakhir dari products.
+
+
+**Tugas 5**
+
+
+**Jelaskan perbedaan antara _asynchronous programming_ dengan _synchronous programming_.**
+
+Jawaban:
+
+_Asynchronous programming_ adalah pendekatan pemrograman yang tidak terikat pada protokol _input output_ (I/O) dan tidak saling terikat dengan proses lain sehingga bersifat _independent_. 
+
+_Synchronous programming_ adalah pendekatan pemrograman yang terikat pada protokol _input output_ (I/O) dan antar proses saling terikat.
+
+**Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma _event-driven programming_. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.**
+
+Jawaban:
+
+_Event-driven programming_ merupakan paradigma yang berfokus pada alur program yang mana setiap proses bergantung pada proses yang terjadi sebelumnya. Contoh penerapan pada tugas yaitu user harus login terlebih dahulu, jika belum memiliki akun pada situs web, user harus membuat akun melalui form register lalu log in. Di dalam situs web, user dapat melihat list buku dan menambahkan buku baru menggunakan tombol Add Product By AJAX. Setelah selesai berselancar di situs web, pengguna dapat berhenti mengakses situs web dengan menggunakan tombol log out.
+
+**Jelaskan penerapan _asynchronous programming_ pada AJAX.**
+
+Jawaban:
+
+Pada AJAX penerapan _asynchronous programming_ dilakukan saat mengambil data atau item. Biasanya ditandai dengan kata async sebelum function.
+
+**Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada _library_ jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.**
+
+Jawaban:
+
+Perbandingannya pada aspek:
+- Fetch API lebih cepat dibandingkan jQuery.
+- Fetch API lebih ringan daripada jQuery.
+- jQuery lebih mudah digunakan dibandingan Fetch API.
+- _Developer_ memiliki kontrol yang lebih besar saat menggunakan Fetch API.
+- Fetch API lebih banyak digunakan pada browser modern, sedangkan jQuery sudah lebih lama digunakan pada banyak browser.
+
+Oleh karena itu, Fetch API lebih baik karena kelebihannya lebih banyak yang dapat membantu _developer_ serta memenuhi kepuasan pengguna.
+
+**Jelaskan bagaimana cara kamu mengimplementasikan _checklist_ di atas secara _step-by-step_ (bukan hanya sekadar mengikuti tutorial).**
+
+Jawaban:
+1. Saya memulai pengerjaan tugas dengan membuat fungsi get_product_json, add_product_ajax, get_products_ajax pada main/viwes.py dan melakukan beberapa penyesuaian dengan melakukan import dan menambahkan @csrf_exempt sebelum fungsi add_product_ajax.
+2. Oleh karena itu, saya memerlukan routing ketiga fungsi tersebut pada main/urls.py.
+3. Berikutnya fungsi tersebut digunakan untuk menambahkan dan menampilkan data pada main/templates/main.html sehingga saya menambahkan kode baru pada file tersebut seperti button untuk add product by ajax, dan script untuk prosesnya.
+4. Saya juga menambahkan bootstrap sebagai form untuk add product by ajax.
