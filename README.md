@@ -374,3 +374,5 @@ Jawaban:
 2. Oleh karena itu, saya memerlukan routing ketiga fungsi tersebut pada main/urls.py.
 3. Berikutnya fungsi tersebut digunakan untuk menambahkan dan menampilkan data pada main/templates/main.html sehingga saya menambahkan kode baru pada file tersebut seperti button untuk add product by ajax, dan script untuk prosesnya.
 4. Saya juga menambahkan bootstrap sebagai form untuk add product by ajax.
+
+DOKKU_APP_NAME = khansa-mahira-tugas
