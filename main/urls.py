@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from main.views import show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id, register, login_user, logout_user, edit_product, delete_product, get_product_json, add_product_ajax, get_products_ajax
+from main.views import create_product_flutter, show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id, register, login_user, logout_user, edit_product, delete_product, get_product_json, add_product_ajax, get_products_ajax
 
 app_name = 'main'
 
@@ -20,4 +20,5 @@ urlpatterns = [
     path('get-product/', get_product_json, name='get_product_json'),
     path('create-product-ajax/', add_product_ajax, name='add_product_ajax'),
     path('get-products-ajax/', get_products_ajax, name='get_products_ajax'),
+    path('create-flutter/', create_product_flutter, name='create_product_flutter'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
