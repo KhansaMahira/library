@@ -1,4 +1,5 @@
 import datetime
+import json
 from main.models import Product
 from django.shortcuts import render
 from django.http import HttpResponseNotFound, HttpResponseRedirect, JsonResponse
@@ -136,3 +137,22 @@ def get_products_ajax(request):
     products = Product.objects.all()
     data = [{"name": product.name, "amount": product.amount, "description": product.description, "date_added": product.date_added} for product in products]
     return HttpResponse(b"CREATED", status=201)
+
+@csrf_exempt
+def create_product_flutter(request):
+    if request.method == 'POST':
+        
+        data = json.loads(request.body)
+
+        new_product = Product.objects.create(
+            user = request.user,
+            name = data["name"],
+            amount = int(data["amount"]),
+            description = data["description"]
+        )
+
+        new_product.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
